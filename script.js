@@ -1,9 +1,15 @@
 const works = {
-    "task1" : {"title" : "Project 1", "url" : "works/task1/index.html"},
-    "task2" : {"title" : "Project 2", "url" : "works/task2/index.html"},
-    "task3" : {"title" : "Project 3", "url" : "works/task3/index.html"},
+    "task1": { "title": "Task 1", "url": "works/task1/index.html", "color": "lightblue" },
+    "task2": { "title": "Task 2", "url": "works/task2/index.html", "color": "lightcoral" },
+    "task3": { "title": "Task 3", "url": "works/task3/landing.html", "color": "lightgreen" }
 };
 
-// write your code here 
-// you need to display the list of work titles in a navigation panel 
-// if a work title is clicked, the body section should display the work without reloading the page
+function loadWork(task) {
+    const displayArea = document.getElementById("displayArea");
+    const taskTitle = document.getElementById("taskTitle");
+    const workFrame = document.getElementById("workFrame");
+
+    displayArea.style.backgroundColor = works[task].color;
+    taskTitle.textContent = works[task].title;
+    workFrame.src = works[task].url;
+}
